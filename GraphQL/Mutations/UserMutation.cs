@@ -8,7 +8,7 @@ namespace ReDoPeAPI.GraphQL.Mutations
     [ExtendObjectType("Mutation")]
     public class UserMutation
     {
-        public MutationReturnType AddUser(string firstname, string lastname, string email, string password, int roleId, [Service] ApiContext context)
+        public MutationReturnType AddUser(string firstname, string lastname, string email, string password, int roleId, int groupId, [Service] ApiContext context)
         {
             UserModel user = new()
             {
@@ -16,7 +16,8 @@ namespace ReDoPeAPI.GraphQL.Mutations
                 LastName = lastname,
                 Email = email,
                 Password = PasswordHashing.CreateHash(password),
-                RoleId = roleId
+                RoleId = roleId,
+                GroupId = groupId
             };
 
             try
