@@ -16,6 +16,7 @@ builder.Services.AddGraphQLServer()
                 .AddMutationType(m => m.Name("Mutation"))
                 .AddType<UserMutation>()
                 .AddType<RoleMutation>()
+                .AddType<GroupMutation>()
                 .AddProjections()
                 .AddFiltering()
                 .AddSorting();

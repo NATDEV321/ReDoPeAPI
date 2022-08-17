@@ -11,7 +11,7 @@ namespace ReDoPeAPI.GraphQL.Queries
         [Authorize]
         public IQueryable<UserModel> GetUsers([Service] ApiContext context)
         {
-            return context.Users.Include(u => u.Role).AsQueryable();
+            return context.Users.Include(u => u.Role).Include(u => u.Group).AsQueryable();
         }
     }
 }
