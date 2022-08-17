@@ -13,7 +13,9 @@
     <PackageReference Include="HotChocolate" Version="12.12.1" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="12.12.1" />
     <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />
+    <PackageReference Include="HotChocolate.Data" Version="12.12.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.8" />
+    <PackageReference Include="Quartz" Version="3.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
