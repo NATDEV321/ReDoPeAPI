@@ -1,13 +1,17 @@
-﻿using ReDoPeAPI.Models;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using ReDoPeAPI.Context;
+using ReDoPeAPI.Models;
 
 namespace ReDoPeAPI.GraphQL.Queries
 {
     [ExtendObjectType("Query")]
     public class UserQuery
     {
-        public IQueryable<UserModel> GetUsers()
+        [Authorize]
+        public IQueryable<UserModel> GetUsers([Service] ApiContext context)
         {
-            return (new List<UserModel>() { new UserModel { FirstName = "allo", LastName = "ouais" } }).AsQueryable();
+            return context.Users.Include(u => u.Role).AsQueryable();
         }
     }
 }
