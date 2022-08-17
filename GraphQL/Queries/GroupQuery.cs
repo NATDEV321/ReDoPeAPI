@@ -6,12 +6,12 @@ using ReDoPeAPI.Models;
 namespace ReDoPeAPI.GraphQL.Queries
 {
     [ExtendObjectType("Query")]
-    public class UserQuery
+    public class GroupQuery
     {
         [Authorize]
-        public IQueryable<UserModel> GetUsers([Service] ApiContext context)
+        public IQueryable<GroupModel> GetGroups([Service] ApiContext context)
         {
-            return context.Users.Include(u => u.Role).Include(u => u.Group).AsQueryable();
+            return context.Groups.Include(g => g.Users).AsQueryable();
         }
     }
 }

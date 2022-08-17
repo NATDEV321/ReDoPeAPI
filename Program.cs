@@ -12,10 +12,12 @@ builder.Services.AddDbContext<ApiContext>(context => context.UseInMemoryDatabase
 builder.Services.AddGraphQLServer()
                 .AddType<UserQuery>()
                 .AddType<RoleQuery>()
+                .AddType<GroupQuery>()
                 .AddQueryType(q => q.Name("Query"))
                 .AddMutationType(m => m.Name("Mutation"))
                 .AddType<UserMutation>()
                 .AddType<RoleMutation>()
+                .AddType<GroupMutation>()
                 .AddProjections()
                 .AddFiltering()
                 .AddSorting();

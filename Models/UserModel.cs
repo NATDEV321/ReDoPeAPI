@@ -15,5 +15,7 @@ namespace ReDoPeAPI.Models
         [Required]
         public int RoleId { get; set; }
         public RoleModel Role { get; set; }
+        public int GroupId { get; set; }
+        public GroupModel Group { get; set; }
     }
 }

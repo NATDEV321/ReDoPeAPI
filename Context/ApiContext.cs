@@ -15,9 +15,15 @@ namespace ReDoPeAPI.Context
                 .HasOne(u => u.Role)
                 .WithMany(r => r.Users)
                 .HasForeignKey(u => u.RoleId);
+
+            modelBuilder.Entity<UserModel>()
+                .HasOne(u => u.Group)
+                .WithMany(r => r.Users)
+                .HasForeignKey(u => u.GroupId);
         }
 
         public DbSet<UserModel> Users { get; set; }
         public DbSet<RoleModel> Roles { get; set; }
+        public DbSet<GroupModel> Groups { get; set; }
     }
 }
